@@ -43,7 +43,7 @@ public class UI {
                     handleLogsByLetter();
                     break;
                 case "2":
-                    //printLogs(controller.getLogsSortedByX());
+                    printLogs(controller.getLogsSortedByX());
                     break;
                 case "3":
                     //printLogsByX();
@@ -76,15 +76,15 @@ public class UI {
      *
      * @param logs list of logs
      */
-//    private void printLogs(List<Log> logs) {
-//        if (logs.isEmpty()) {
-//            System.out.println("No logs found.");
-//        } else {
-//            for(Log log : logs) {
-//                //System.out.println(log.getDatum() + ": " + log.getMitgliedsname() + " - " + log.getEreignis());
-//            }
-//        }
-//    }
+    private void printLogs(List<Log> logs) {
+        if (logs.isEmpty()) {
+            System.out.println("No logs found.");
+        } else {
+            for(Log log : logs) {
+                System.out.println(log.getDatum() + ": " + log.getCharakterName() + " - " + log.getBeschreibung());
+            }
+        }
+    }
 
     /**
      * Prints Logs to file

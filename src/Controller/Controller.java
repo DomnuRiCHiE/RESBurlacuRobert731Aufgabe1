@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Log;
+import Model.Stufe;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -21,12 +22,12 @@ public class Controller {
                 .toList();
     }
 
-//    public List<Log> getLogsSortedByX() {
-//        return logEntries.stream()
-//                .filter(p -> p.getHaus() == Haus.Stark)
-//                .sorted(Comparator.comparing(Log::getDatum))
-//                .toList();
-//    }
+    public List<Log> getLogsSortedByX() {
+        return logEntries.stream()
+                .filter(p -> p.getStufe() == Stufe.Jonin)
+                .sorted(Comparator.comparing(Log::getDatum))
+                .toList().reversed();
+    }
 
 //    public List<String> getLogsByX() {
 //        Map<Haus, Long> processedLogs = logEntries.stream()
