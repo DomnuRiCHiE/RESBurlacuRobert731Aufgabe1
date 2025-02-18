@@ -91,7 +91,7 @@ public class UI {
      *
      * @throws IOException when logs cannot be printed to file
      */
-//    private void printLogsByX() throws IOException {
-//        writeToFile(controller.getLogsByX(), "ergebnis.txt");
-//    }
+    private void printLogsByX() throws IOException {
+        writeToFile(controller.getLogsByX(), "gesammtzahl.txt");
+    }
 }

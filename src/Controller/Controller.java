@@ -29,22 +29,22 @@ public class Controller {
                 .toList().reversed();
     }
 
-//    public List<String> getLogsByX() {
-//        Map<Haus, Long> processedLogs = logEntries.stream()
-//                .collect(Collectors.groupingBy(
-//                        Log::getHaus,
-//                        Collectors.counting()
-//                ));
-//
-//        return processedLogs.entrySet().stream()
-//                .sorted((entry1, entry2) -> {
-//                    int countComparison = entry2.getValue().compareTo(entry1.getValue());
-//                    if(countComparison != 0) {
-//                        return countComparison;
-//                    }
-//                    return entry1.getKey().toString().compareTo(entry2.getKey().toString());
-//                })
-//                .map(entry -> entry.getKey() + "#" + entry.getValue())
-//                .toList();
-//    }
+    public List<String> getLogsByX() {
+        Map<Stufe, Long> processedLogs = logEntries.stream()
+                .collect(Collectors.groupingBy(
+                        Log::getStufe,
+                        Collectors.counting()
+                ));
+
+        return processedLogs.entrySet().stream()
+                .sorted((entry1, entry2) -> {
+                    int countComparison = entry2.getValue().compareTo(entry1.getValue());
+                    if(countComparison != 0) {
+                        return countComparison;
+                    }
+                    return entry1.getKey().toString().compareTo(entry2.getKey().toString());
+                })
+                .map(entry -> entry.getKey() + "%" + entry.getValue())
+                .toList();
+    }
 }
