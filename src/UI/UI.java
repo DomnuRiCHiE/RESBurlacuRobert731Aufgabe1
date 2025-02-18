@@ -46,7 +46,7 @@ public class UI {
                     printLogs(controller.getLogsSortedByX());
                     break;
                 case "3":
-                    //printLogsByX();
+                    printLogsByX();
                     System.out.println("Done");
                     break;
                 case "4":
