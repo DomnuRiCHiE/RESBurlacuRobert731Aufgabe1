@@ -7,6 +7,7 @@ import Controller.Controller;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import static Model.FileFunctionalities.writeToFile;
 
@@ -39,7 +40,7 @@ public class UI {
 
             switch (input) {
                 case "1":
-                    //handleLogsByLetter();
+                    handleLogsByLetter();
                     break;
                 case "2":
                     //printLogs(controller.getLogsSortedByX());
@@ -60,11 +61,15 @@ public class UI {
     /**
      * Handles option to display logs whose names start with a specific letter
      */
-//    private void handleLogsByLetter() {
-//        System.out.print("Enter a capital letter: ");
-//        String letter = scanner.nextLine();
-//        controller.getLogsByLetter(letter).forEach(System.out::println);
-//    }
+    private void handleLogsByLetter() {
+        System.out.print("Enter a capacity: ");
+        int capacity = scanner.nextInt();
+        scanner.nextLine();
+        List<Log> logs = controller.getLogsByCapacity(capacity);
+        for(Log log : logs) {
+            System.out.println(log.getCharakterName());
+        }
+    }
 
     /**
      * Prints a list of logs

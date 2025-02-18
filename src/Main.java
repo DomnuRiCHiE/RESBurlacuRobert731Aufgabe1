@@ -23,7 +23,7 @@ public class Main {
                 System.out.println(log);
             }
 
-            //ui.menu();
+            ui.menu();
 
         } catch (Exception e) {
             e.printStackTrace();

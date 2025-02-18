@@ -15,16 +15,11 @@ public class Controller {
         this.logEntries = logEntries;
     }
 
-//    public List<String> getLogsByLetter(String letter) {
-//        Set<String> uniqueLogs = new HashSet<>();
-//        for (Log entry : logEntries) {
-//            String processedLog = entry.getMitgliedsname();
-//            if (processedLog.startsWith(String.valueOf(letter))) {
-//                uniqueLogs.add(processedLog);
-//            }
-//        }
-//        return new ArrayList<>(uniqueLogs);
-//    }
+    public List<Log> getLogsByCapacity(int capacity) {
+        return logEntries.stream()
+                .filter(l -> l.getKraftpunkte() > capacity)
+                .toList();
+    }
 
 //    public List<Log> getLogsSortedByX() {
 //        return logEntries.stream()
